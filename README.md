@@ -33,12 +33,24 @@ hdmi_mode=87
 
    in `config.txt`.  *Note:* it is now _incompatible_ with anything but the Paperlike HD.
 
-For convenience, I have included my `config.txt` and `edid.txt` this repo.
+For convenience, I have included my `config.txt` and `edid.dat` this repo.
 
-# Using Dasung Paperlike Pro-F and Pro-FT with Raspberry Pi 4
+# Using Dasung Paperlike Pro-F/FT with Raspberry Pi 4
+
+## Raspbian
 
 The monitor works fine without any specific settings on the latest Raspbian.
-It is important to use HDMI 1.4 micro-hdmi m -> hdmi f otherwise it will not work.
-The only available resolution is 1600*1200.
-I've extracted the edid from the Paperlike Pro monitor in case someone needs it.
-There is more ghosting compared to normal use on a pc with windows 10.
+
+## Ubuntu
+
+I've extracted the edid from the Paperlike Pro monitor with the help of `get-edid` command.
+
+On Ubuntu Core with installed standard ubuntu desktop I did:
+
+1. Put `edid.dat` in `/boot/firmware/` dir.
+2. Edit `/boot/firmware/usercfg.txt` and add `hdmi_edid_file=1` (see example config)
+
+-----
+
+- It is very important to use HDMI 1.4 micro-hdmi m -> hdmi f otherwise the monitor will not work but will show black dots noise.
+- The only available resolution is 1600*1200.
