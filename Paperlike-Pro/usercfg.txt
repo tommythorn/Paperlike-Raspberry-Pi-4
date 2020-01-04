@@ -1,6 +1,0 @@
-hdmi_edid_file=1
-
-# overclock (needs active cooling)
-#arm_64bit=1
-#arm_freq=2000
-#over_voltage=5
