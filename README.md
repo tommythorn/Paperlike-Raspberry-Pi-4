@@ -1,9 +1,5 @@
 # Using Dasung Paperlike HD-F and HD-FT with Raspberry Pi 4
 
-_Note: I only have access to the Paperlike HD-FT, but if someone gets
-it working with the Paperlike Pro, I'll be happy to update my
-instructions._
-
 The [Dasung Paperlike Pro / Paperlike
 HD](https://www.indiegogo.com/projects/first-e-ink-monitor-with-front-light-touch)
 are E-ink monitors that have many nice properties (and work well
@@ -18,9 +14,10 @@ What I did to make it work:
 
 1. extracted the
    [EDID](https://en.wikipedia.org/wiki/Extended_Display_Identification_Data)
-   from the Paperlike on a iMac and included it as edid.dat, including it
+   from the Paperlike on a iMac and included it as `edid.dat`, including it
    in the same directory as the `config.txt` (which is typically `/boot`
-   but `/boot/firmware` on Ubuntu)
+   but `/boot/firmware` on Ubuntu).  (`get-edid` may work too, but I haven't
+   tried that).
 
 2. forced the use of this using
 
@@ -36,6 +33,8 @@ hdmi_mode=87
 For convenience, I have included my `config.txt` and `edid.dat` this repo.
 
 # Using Dasung Paperlike Pro-F/FT with Raspberry Pi 4
+
+_Contributed section_
 
 ## Raspbian
 
