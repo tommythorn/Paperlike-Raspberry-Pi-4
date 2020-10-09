@@ -49,6 +49,12 @@ On Ubuntu Core with installed standard ubuntu desktop I did:
 1. Put `edid.dat` in `/boot/firmware/` dir.
 2. Edit `/boot/firmware/usercfg.txt` and add `hdmi_edid_file=1` (see example config)
 
+## Arch Linux/Arm
+
+Ypsu reports that he needed `hdmi_enable_4kp60=1` in the `config.txt` on Arch Linux for his
+*Paperlink HD* in order to get full resolution in the framebuffer.  Definitely worth a shot
+and probably not just specific to just Arch Linux.
+
 -----
 
 - It is very important to use HDMI 1.4 micro-hdmi m -> hdmi f otherwise the monitor will not work but will show black dots noise.
