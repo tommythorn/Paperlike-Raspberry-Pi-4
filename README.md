@@ -1,4 +1,4 @@
-# Using Dasung Paperlike HD-F and HD-FT with Raspberry Pi 4
+# Using Dasung Paperlike HD-F, HD-FT and Paperlike 253 with Raspberry Pi 4
 
 The [Dasung Paperlike Pro / Paperlike
 HD](https://www.indiegogo.com/projects/first-e-ink-monitor-with-front-light-touch)
@@ -59,3 +59,28 @@ and probably not just specific to just Arch Linux.
 
 - It is very important to use HDMI 1.4 micro-hdmi m -> hdmi f otherwise the monitor will not work but will show black dots noise.
 - The only available resolution is 1600*1200.
+
+## Paperlike 253
+
+The method below worked for my Rasperry Pi 4B running Raspian 10 Buster (the latest Rasperry Pi OS at the time).
+
+Add these lines to your existing `config.txt`:
+
+```
+# do not try the lower res 1800x900 it has issues - simply use the double pixel trick, see below
+hdmi_cvt=3200 1800 40 3 0 0 1
+hdmi_group=2
+hdmi_mode=87
+# this will fix the black bars around the screen which are otherwise wasting space
+disable_overscan=1
+```
+
+With this, your Paperlike 253 should already be working after reboot! It is on high res however (3200x1800). If like me you want bigger characters, simply use this trick: `preferences > rasperry pi configuration > display > enable double pixel`. Magic!
+
+Notes:
+
+- if you want to watch videos, do not use VLC (video lags with it for some reason), use Kodi instead it works perfectly! You can even use the android app "Yatse" on your favorite eink smartphone (Yotaphone 3+ in my case) to control it.
+
+- I did not need any EDID custom file like u/wauske did. At least for me, simpler is better!
+
+I hope this is helpful to at least another Paperlike 253 user! (=\^ェ\^=)
